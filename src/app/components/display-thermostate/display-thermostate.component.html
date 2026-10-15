@@ -1,0 +1,8 @@
+<!--<h1>{{ temperature() + "ºC" }}</h1>
+@if (temperature() > umbral) {
+  <h1>⚠️ Temperatura por encima del umbral {{ umbral }}</h1>
+}-->
+
+@if(alarm){
+  <h1 [class.warning]>⚠️ Temperatura por encima del umbral {{ umbral }}</h1>
+}

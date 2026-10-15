@@ -1,0 +1,14 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+:host(.warning){
+  background-color: red;
+}
+
+h1.warning {
+  color: white
+}
