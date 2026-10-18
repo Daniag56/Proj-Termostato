@@ -3,6 +3,6 @@
   <h1>⚠️ Temperatura por encima del umbral {{ umbral }}</h1>
 }-->
 
-@if(alarm){
-  <h1 [class.warning]>⚠️ Temperatura por encima del umbral {{ umbral }}</h1>
+@if(alarm()){
+  <h1 [class.warning]>⚠️ Temperatura por encima del umbral {{ umbral()}}</h1>
 }

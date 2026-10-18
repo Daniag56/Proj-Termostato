@@ -1,2 +1,2 @@
-<app-control-temperature [temperature]="this.temperature"(temperatureOutput)="onCambioTemperaturaOutput($event)"></app-control-temperature>
-<app-display-thermostate [temperature]="this.temperature" ></app-display-thermostate>
+<app-control-temperature [temperature]="this.temperature" (temperatureOutput)="onCambioTemperaturaOutput($event)" (umbralOutput)="onCambioUmbralOutput($event)"></app-control-temperature>
+<app-display-thermostate [temperature]="this.temperature" [umbral]="umbral" ></app-display-thermostate>

@@ -14,9 +14,13 @@ export class AppComponent {
 
   temperature = 20;
 
-
+  umbral = 25
 
   onCambioTemperaturaOutput(tempUpdate : number){
     this.temperature = tempUpdate
+  }
+
+  onCambioUmbralOutput(nuevoUmbral:number){
+    this.umbral = nuevoUmbral;
   }
 }

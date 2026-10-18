@@ -9,6 +9,7 @@ import { Component, input, output } from '@angular/core';
 export class ControlTemperatureComponent {
   //inputs y outputs
   temperature = input.required<number>();
+  umbral = input<number>(0);
   temperatureOutput = output<number>()
   umbralOutput = output<number>();
   //propiedades
@@ -26,12 +27,12 @@ export class ControlTemperatureComponent {
   onInput(event: Event){
     let inputElement = event.target as HTMLInputElement;
 
-    try {
-      let umbral = Number(inputElement.value);
-      console.log('Se establece un nuevo umbral: ${umbral}')
-      this.umbralOutput.emit(umbral);
-    } catch (error) {
-      inputElement.value = this.temperature().toString();
+    let umbral = Number(inputElement.value);
+    if(Number.isNaN(umbral)){
+      inputElement.value = this.umbral().toString();
+    }else{
+      console.log('Se establece nuevo: ${umbral}');
+      this.umbralOutput.emit(umbral)
     }
 
   }

@@ -1,4 +1,4 @@
-import { Component, input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, input, computed } from '@angular/core';
 
 @Component({
   selector: 'app-display-thermostate',
@@ -6,19 +6,11 @@ import { Component, input, OnChanges, SimpleChanges } from '@angular/core';
   templateUrl: './display-thermostate.component.html',
   styleUrl: './display-thermostate.component.css',
   host: {
-    '[class.warning]': 'alarm'
+    '[class.warning]': 'alarm()'
   }
 })
-export class DisplayThermostateComponent implements OnChanges {
-  //HOOKS onChanges se lanza cuando hay un cambio en inputs de componentes
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['temperature']) {
-      this.alarm = changes['temperature'].currentValue > this.umbral;
-    }
-  }
-  //inputs y outputs
+export class DisplayThermostateComponent {
   temperature = input.required<number>();
-  alarm = false;
-  //propiedades
-  umbral = 25;
+  umbral = input.required<number>();
+  alarm = computed(() => this.temperature() > this.umbral());
 }
