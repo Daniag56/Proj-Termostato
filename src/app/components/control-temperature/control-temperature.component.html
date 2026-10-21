@@ -11,6 +11,6 @@
 </div>
 <div>
   <!--event envia el evento dom del navegador asociado a input-->
-  <input (input)="onInput($event)"/>
+  <input (input)="onInput($event)" [value]="this.umbral()"/>
 </div>
 

@@ -9,7 +9,7 @@ import { Component, input, output } from '@angular/core';
 export class ControlTemperatureComponent {
   //inputs y outputs
   temperature = input.required<number>();
-  umbral = input<number>(0);
+  umbral = input.required<number>();
   temperatureOutput = output<number>()
   umbralOutput = output<number>();
   //propiedades
